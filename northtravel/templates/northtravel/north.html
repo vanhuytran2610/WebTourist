@@ -1,0 +1,10 @@
+{% extends "pages/base.html" %}
+
+{% block title %}NorthTravel{% endblock %}
+
+{% block content %}
+{% for post in Posts_North %}
+    <h4>{{ post.upload_to|date:"d-m-Y" }} <a href="/blogNorth/{{ post.id }}">{{ post.title }}</a></h4>
+{% endfor %}
+
+{% endblock %}

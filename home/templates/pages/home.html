@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h4 style="color: orangered">Miền Bắc</h4>
+{% for post_North in Posts_North %}
+    <h5>{{ post_North.upload_to|date:"d-m-Y" }} <a href="/northtravel/{{ post_North.id }}">{{ post_North.title }}</a></h5>
+{% endfor %}
+    <br>
+    <h4 style="color: cornflowerblue">Miền Trung</h4>
+{% for post_Central in Posts_Central %}
+    <h5>{{ post_Central.upload_to|date:"d-m-Y" }} <a href="/centraltravel/{{ post_Central.id }}">{{ post_Central.title }}</a></h5>
+{% endfor %}
+    <br>
+    <h4 style="color: #6a1a21">Miền Nam</h4>
+{% for post_South in Posts_South %}
+    <h5>{{ post_South.upload_to|date:"d-m-Y" }} <a href="/southtravel/{{ post_South.id }}">{{ post_South.title }}</a></h5>
+{% endfor %}
+{% endblock %}
